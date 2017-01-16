@@ -25,8 +25,6 @@ namespace Sample
                 var container = builder.Build();
 
                 config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-
-                var x = container.Resolve<Widgets.WidgetsController>();
             });
         }
     }
