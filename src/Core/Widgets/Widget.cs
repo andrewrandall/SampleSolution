@@ -20,7 +20,7 @@ namespace Sample.Widgets
             get { return name; }
             set
             {
-                if (string.IsNullOrEmpty(name)) throw new BrokenBusinessRuleException($"{nameof(Name)} is required");
+                if (string.IsNullOrEmpty(value)) throw new BrokenBusinessRuleException($"{nameof(Name)} is required");
                 name = value;
             }
         }

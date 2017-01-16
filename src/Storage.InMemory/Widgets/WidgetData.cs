@@ -21,24 +21,29 @@ namespace Sample.Widgets
                     (int)Math.Floor((double)(Count / number)),
                     pageSize,
                     this.OrderBy(x => x.Key)
-                        .Skip(pageSize * number)
+                        .Skip(pageSize * (number - 1))
                         .Take(pageSize)
                         .Select(x => Summarize(x.Value)));
         }
 
         int ISaveWidget.Save(Widget widget)
         {
+            int? id = widget.Id;
+
             lock (saveLock)
             {
                 if (!widget.Id.HasValue)
                 {
-                    widget.Id = Keys.Max() + 1;
+                    id =
+                        Keys.Any() ?
+                            Keys.Max() + 1 :
+                            1;
                 }
 
-                this[widget.Id.Value] = widget;
+                this[id.Value] = widget;
             }
 
-            return widget.Id.Value;
+            return id.Value;
         }
 
         Widget IReconstituteWidget.IReconstituteWidget(int id)

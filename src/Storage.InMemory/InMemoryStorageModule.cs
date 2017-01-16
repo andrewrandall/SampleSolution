@@ -13,7 +13,7 @@ namespace Sample
         {
             base.Load(builder);
 
-            builder.RegisterType<Widgets.WidgetData>().AsImplementedInterfaces();
+            builder.RegisterType<Widgets.WidgetData>().AsImplementedInterfaces().SingleInstance();
         }
     }
 }
