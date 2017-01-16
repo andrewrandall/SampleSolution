@@ -114,6 +114,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core.AutofacAdapter\Core.AutofacAdapter.csproj">
+      <Project>{4fb6026e-d9b1-43c6-8673-a8b38ac01628}</Project>
+      <Name>Core.AutofacAdapter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{52062c53-783c-4d93-a4be-87c6e5252085}</Project>
       <Name>Core</Name>

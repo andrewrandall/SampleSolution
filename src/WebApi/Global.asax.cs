@@ -19,6 +19,8 @@ namespace Sample
 
                 var builder = new ContainerBuilder();
                 builder.RegisterApiControllers(this.GetType().Assembly);
+                builder.RegisterModule(new InMemoryStorageModule());
+                builder.RegisterModule(new CoreModule());
                 var container = builder.Build();
 
                 config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
