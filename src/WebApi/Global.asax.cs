@@ -18,6 +18,8 @@ namespace Sample
             {
                 config.MapHttpAttributeRoutes();
 
+                config.Filters.Add(new BusinessRuleExceptionFilter());
+
                 var builder = new ContainerBuilder();
                 builder.RegisterApiControllers(typeof(WebApiApplication).Assembly);
                 builder.RegisterModule(new InMemoryStorageModule());

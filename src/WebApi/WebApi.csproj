@@ -93,7 +93,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessRuleExceptionHandler.cs" />
+    <Compile Include="BusinessRuleExceptionFilter.cs" />
     <Compile Include="PageModel.cs" />
     <Compile Include="Widgets\WidgetsController.cs" />
     <Compile Include="Widgets\AddWidgetModel.cs" />
