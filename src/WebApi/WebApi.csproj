@@ -95,8 +95,7 @@
   <ItemGroup>
     <Compile Include="BusinessRuleExceptionHandler.cs" />
     <Compile Include="PageModel.cs" />
-    <Compile Include="Widgets\GetWidgetsController.cs" />
-    <Compile Include="Widgets\AddWidgetController.cs" />
+    <Compile Include="Widgets\WidgetsController.cs" />
     <Compile Include="Widgets\AddWidgetModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

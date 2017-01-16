@@ -3,6 +3,7 @@ using Autofac.Integration.WebApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
@@ -18,12 +19,14 @@ namespace Sample
                 config.MapHttpAttributeRoutes();
 
                 var builder = new ContainerBuilder();
-                builder.RegisterApiControllers(this.GetType().Assembly);
+                builder.RegisterApiControllers(typeof(WebApiApplication).Assembly);
                 builder.RegisterModule(new InMemoryStorageModule());
                 builder.RegisterModule(new CoreModule());
                 var container = builder.Build();
 
                 config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+
+                var x = container.Resolve<Widgets.WidgetsController>();
             });
         }
     }
